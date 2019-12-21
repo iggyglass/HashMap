@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
-
-namespace HashMap
+﻿namespace HashMap
 {
-    public struct KeyValue<TKey, TValue> where TKey : IEqualityComparer
+    public struct KeyValue<TKey, TValue>
     {
 
         public TKey Key;

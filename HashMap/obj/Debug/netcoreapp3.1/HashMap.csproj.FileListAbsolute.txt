@@ -1,0 +1,11 @@
+C:\Users\Iggy.Glassman\source\repos\HashMap\HashMap\bin\Debug\netcoreapp3.1\HashMap.exe
+C:\Users\Iggy.Glassman\source\repos\HashMap\HashMap\bin\Debug\netcoreapp3.1\HashMap.deps.json
+C:\Users\Iggy.Glassman\source\repos\HashMap\HashMap\bin\Debug\netcoreapp3.1\HashMap.runtimeconfig.json
+C:\Users\Iggy.Glassman\source\repos\HashMap\HashMap\bin\Debug\netcoreapp3.1\HashMap.runtimeconfig.dev.json
+C:\Users\Iggy.Glassman\source\repos\HashMap\HashMap\bin\Debug\netcoreapp3.1\HashMap.dll
+C:\Users\Iggy.Glassman\source\repos\HashMap\HashMap\bin\Debug\netcoreapp3.1\HashMap.pdb
+C:\Users\Iggy.Glassman\source\repos\HashMap\HashMap\obj\Debug\netcoreapp3.1\HashMap.csprojAssemblyReference.cache
+C:\Users\Iggy.Glassman\source\repos\HashMap\HashMap\obj\Debug\netcoreapp3.1\HashMap.AssemblyInfoInputs.cache
+C:\Users\Iggy.Glassman\source\repos\HashMap\HashMap\obj\Debug\netcoreapp3.1\HashMap.AssemblyInfo.cs
+C:\Users\Iggy.Glassman\source\repos\HashMap\HashMap\obj\Debug\netcoreapp3.1\HashMap.dll
+C:\Users\Iggy.Glassman\source\repos\HashMap\HashMap\obj\Debug\netcoreapp3.1\HashMap.pdb
