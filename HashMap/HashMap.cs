@@ -3,11 +3,6 @@ using System.Collections.Generic;
 
 namespace HashMap
 {
-
-    // todo:
-    //  -Unit tests
-    //  -Fix code (probably)
-
     public class HashMap<TKey, TValue>
     {
 
@@ -21,7 +16,7 @@ namespace HashMap
 
         public HashMap()
         {
-            buckets = new LinkedList<KeyValue<TKey, TValue>>[int.MaxValue];
+            buckets = new LinkedList<KeyValue<TKey, TValue>>[65535];
         }
 
         #region Public Methods
