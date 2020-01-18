@@ -164,5 +164,31 @@ namespace Tests
             Assert.True(map.ContainsKey(1));
             Assert.False(map.ContainsKey(4));
         }
+
+        [Fact]
+        [SuppressMessage("Assertions", "xUnit2017:Do not use Contains() to check if a value exists in a collection", Justification = "This test is to check if all values have been enumerated through")]
+        public void Enumeration()
+        {
+            HashMap<int, string> map = new HashMap<int, string>();
+
+            KeyValuePair<int, string> a = new KeyValuePair<int, string>(1, "a");
+            KeyValuePair<int, string> b = new KeyValuePair<int, string>(2, "b");
+            KeyValuePair<int, string> c = new KeyValuePair<int, string>(3, "c");
+
+            List<KeyValuePair<int, string>> data = new List<KeyValuePair<int, string>>();
+
+            map.Add(1, "a");
+            map.Add(2, "b");
+            map.Add(3, "c");
+
+            foreach (var kvp in map)
+            {
+                data.Add(kvp);
+            }
+
+            Assert.True(data.Contains(a));
+            Assert.True(data.Contains(b));
+            Assert.True(data.Contains(c));
+        }
     }
 }

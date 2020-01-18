@@ -1,29 +1,24 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace HashMap
 {
-    public class HashMap<TKey, TValue>/* : IDictionary<TKey, TValue>*/
+    public class HashMap<TKey, TValue> : IDictionary<TKey, TValue>
     {
 
-        // TODO:
-        //   - Write enumeration functions required for IDictionary interface
-        //   - Write unit tests for enumeration
-        //   - Fix hm.CopyTo()
-        //   - See if there is an IKeyValuePair that my struct can impliment
-
-        private LinkedList<KeyValue<TKey, TValue>>[] buckets;
+        private LinkedList<KeyValuePair<TKey, TValue>>[] buckets;
         private int pairs = 0;
         private bool readOnly = false;
 
         public HashMap(int initialSize)
         {
-            buckets = new LinkedList<KeyValue<TKey, TValue>>[initialSize];
+            buckets = new LinkedList<KeyValuePair<TKey, TValue>>[initialSize];
         }
 
         public HashMap()
         {
-            buckets = new LinkedList<KeyValue<TKey, TValue>>[65535];
+            buckets = new LinkedList<KeyValuePair<TKey, TValue>>[65535];
         }
 
         #region Public Methods
@@ -36,7 +31,7 @@ namespace HashMap
 
                 if (buckets[index] == null) throw new Exception($"Key {i} doesn't exist in Hash Map.");
 
-                LinkedListNode<KeyValue<TKey, TValue>> current = buckets[index].First;
+                LinkedListNode<KeyValuePair<TKey, TValue>> current = buckets[index].First;
 
                 do
                 {
@@ -55,18 +50,18 @@ namespace HashMap
 
                 if (buckets[index] == null)
                 {
-                    buckets[index] = new LinkedList<KeyValue<TKey, TValue>>();
-                    buckets[index].AddFirst(new KeyValue<TKey, TValue>(i, value));
+                    buckets[index] = new LinkedList<KeyValuePair<TKey, TValue>>();
+                    buckets[index].AddFirst(new KeyValuePair<TKey, TValue>(i, value));
                 }
                 else
                 {
-                    LinkedListNode<KeyValue<TKey, TValue>> current = buckets[index].First;
+                    LinkedListNode<KeyValuePair<TKey, TValue>> current = buckets[index].First;
 
                     do
                     {
                         if (current.Value.Key.Equals(i))
                         {
-                            current.Value = new KeyValue<TKey, TValue>(i, value);
+                            current.Value = new KeyValuePair<TKey, TValue>(i, value);
                             return;
                         }
 
@@ -74,7 +69,7 @@ namespace HashMap
                     }
                     while (current != null);
 
-                    buckets[index].AddLast(new KeyValue<TKey, TValue>(i, value));
+                    buckets[index].AddLast(new KeyValuePair<TKey, TValue>(i, value));
                 }
             }
         }
@@ -108,13 +103,34 @@ namespace HashMap
             {
                 if (buckets[i] == null) continue;
 
-                LinkedListNode<KeyValue<TKey, TValue>> current = buckets[i].First;
+                LinkedListNode<KeyValuePair<TKey, TValue>> current = buckets[i].First;
 
                 do
                 {
                     valuePairs[index] = new KeyValuePair<TKey, TValue>(current.Value.Key, current.Value.Value);
                     index++;
 
+                    current = current.Next;
+                }
+                while (current != null);
+            }
+        }
+
+        /// <summary>
+        /// Returns enumerator for hash map
+        /// </summary>
+        /// <returns>The enumerator</returns>
+        public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
+        {
+            for (int i = 0; i < buckets.Length; i++)
+            {
+                if (buckets[i] == null) continue;
+
+                LinkedListNode<KeyValuePair<TKey, TValue>> current = buckets[i].First;
+
+                do
+                {
+                    yield return current.Value;
                     current = current.Next;
                 }
                 while (current != null);
@@ -141,9 +157,9 @@ namespace HashMap
 
                 for (int i = 0; i < buckets.Length; i++)
                 {
-                    if (buckets[i] == null) continue; // buckets may be null allowing massive indexes
+                    if (buckets[i] == null) continue;
 
-                    LinkedListNode<KeyValue<TKey, TValue>> current = buckets[i].First;
+                    LinkedListNode<KeyValuePair<TKey, TValue>> current = buckets[i].First;
 
                     do
                     {
@@ -173,7 +189,7 @@ namespace HashMap
                 {
                     if (buckets[i] == null) continue;
 
-                    LinkedListNode<KeyValue<TKey, TValue>> current = buckets[i].First;
+                    LinkedListNode<KeyValuePair<TKey, TValue>> current = buckets[i].First;
 
                     do
                     {
@@ -222,7 +238,7 @@ namespace HashMap
             if (buckets[index] == null) return false;
             else
             {
-                LinkedListNode<KeyValue<TKey, TValue>> current = buckets[index].First;
+                LinkedListNode<KeyValuePair<TKey, TValue>> current = buckets[index].First;
 
                 do
                 {
@@ -247,7 +263,7 @@ namespace HashMap
             if (buckets[index] == null) return false;
             else
             {
-                LinkedListNode<KeyValue<TKey, TValue>> current = buckets[index].First;
+                LinkedListNode<KeyValuePair<TKey, TValue>> current = buckets[index].First;
 
                 do
                 {
@@ -274,12 +290,12 @@ namespace HashMap
 
             if (buckets[index] == null)
             {
-                buckets[index] = new LinkedList<KeyValue<TKey, TValue>>();
-                buckets[index].AddFirst(new KeyValue<TKey, TValue>(key, value));
+                buckets[index] = new LinkedList<KeyValuePair<TKey, TValue>>();
+                buckets[index].AddFirst(new KeyValuePair<TKey, TValue>(key, value));
             }
             else
             { 
-                LinkedListNode<KeyValue<TKey, TValue>> current = buckets[index].First;
+                LinkedListNode<KeyValuePair<TKey, TValue>> current = buckets[index].First;
 
                 do // Make sure key doesn't already exist
                 {
@@ -289,7 +305,7 @@ namespace HashMap
                 while (current != null);
 
 
-                buckets[index].AddLast(new KeyValue<TKey, TValue>());
+                buckets[index].AddLast(new KeyValuePair<TKey, TValue>());
             }
 
             pairs++;
@@ -327,7 +343,7 @@ namespace HashMap
             }
             else
             {
-                LinkedListNode<KeyValue<TKey, TValue>> current = buckets[index].First;
+                LinkedListNode<KeyValuePair<TKey, TValue>> current = buckets[index].First;
 
                 while (current.Next != null)
                 {
@@ -368,7 +384,7 @@ namespace HashMap
             }
             else if (buckets[index].Count > 1)
             {
-                LinkedListNode<KeyValue<TKey, TValue>> current = buckets[index].First;
+                LinkedListNode<KeyValuePair<TKey, TValue>> current = buckets[index].First;
 
                 while (current.Next != null)
                 {
@@ -413,13 +429,13 @@ namespace HashMap
         {
             if (pairs < buckets.Length && buckets.Length < int.MaxValue / 2) return;
 
-            LinkedList<KeyValue<TKey, TValue>>[] temp = new LinkedList<KeyValue<TKey, TValue>>[buckets.Length * 2];
+            LinkedList<KeyValuePair<TKey, TValue>>[] temp = new LinkedList<KeyValuePair<TKey, TValue>>[buckets.Length * 2];
 
             for (int i = 0; i < buckets.Length; i++)
             {
                 int index = hashCode(buckets[i].First.Value.Key) % temp.Length;
 
-                temp[index] = new LinkedList<KeyValue<TKey, TValue>>();
+                temp[index] = new LinkedList<KeyValuePair<TKey, TValue>>();
                 temp[index].AddFirst(buckets[i].First.Value);
             }
 
@@ -437,6 +453,11 @@ namespace HashMap
             }
 
             return val;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
 
         #endregion
