@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HashMap", "HashMap\HashMap.csproj", "{5D435581-1037-4BEC-9922-2B11EE5DA875}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{4CD888E8-1A3E-49A6-982B-E17302AD63A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{4CD888E8-1A3E-49A6-982B-E17302AD63A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnionFind", "UnionFind\UnionFind.csproj", "{CD38D4E8-B250-4891-A280-843A5E24A47C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{4CD888E8-1A3E-49A6-982B-E17302AD63A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CD888E8-1A3E-49A6-982B-E17302AD63A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CD888E8-1A3E-49A6-982B-E17302AD63A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD38D4E8-B250-4891-A280-843A5E24A47C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD38D4E8-B250-4891-A280-843A5E24A47C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD38D4E8-B250-4891-A280-843A5E24A47C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD38D4E8-B250-4891-A280-843A5E24A47C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

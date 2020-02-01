@@ -1,4 +1,5 @@
 using HashMap;
+using UnionFind;
 using Xunit;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -7,6 +8,9 @@ namespace Tests
 {
     public class UnitTest1
     {
+
+        #region Hash Map Tests
+
         [Fact]
         public void Insert()
         {
@@ -190,5 +194,36 @@ namespace Tests
             Assert.True(data.Contains(b));
             Assert.True(data.Contains(c));
         }
+
+        #endregion
+
+        #region Union Find Tests
+
+        // TODO:
+        //   -Figure out correct answers and check them against a, b, c, and d in Union
+
+        [Fact]
+        public void Union()
+        {
+            IntegerUnionFind uf = new IntegerUnionFind(13);
+
+            uf.Union(0, 1);
+            uf.Union(1, 2);
+            uf.Union(4, 5);
+            uf.Union(0, 3);
+            uf.Union(7, 8);
+            uf.Union(8, 9);
+            uf.Union(6, 11);
+            uf.Union(11, 10);
+            uf.Union(9, 12);
+            uf.Union(1, 12);
+
+            bool a = uf.IsConnected(2, 5); // false
+            bool b = uf.IsConnected(7, 12); // true
+            bool c = uf.IsConnected(6, 8); // false
+            bool d = uf.IsConnected(0, 12); // true
+        }
+
+        #endregion
     }
 }

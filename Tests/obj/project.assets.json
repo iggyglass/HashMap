@@ -1972,6 +1972,19 @@
         "runtime": {
           "bin/placeholder/HashMap.dll": {}
         }
+      },
+      "UnionFind/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "HashMap": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UnionFind.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UnionFind.dll": {}
+        }
       }
     }
   },
@@ -6524,12 +6537,18 @@
       "type": "project",
       "path": "../HashMap/HashMap.csproj",
       "msbuildProject": "../HashMap/HashMap.csproj"
+    },
+    "UnionFind/1.0.0": {
+      "type": "project",
+      "path": "../UnionFind/UnionFind.csproj",
+      "msbuildProject": "../UnionFind/UnionFind.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "HashMap >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.2.0",
+      "UnionFind >= 1.0.0",
       "coverlet.collector >= 1.0.1",
       "xunit >= 2.4.0",
       "xunit.runner.visualstudio >= 2.4.0"
@@ -6570,6 +6589,9 @@
           "projectReferences": {
             "C:\\Users\\Iggy.Glassman\\source\\repos\\HashMap\\HashMap\\HashMap.csproj": {
               "projectPath": "C:\\Users\\Iggy.Glassman\\source\\repos\\HashMap\\HashMap\\HashMap.csproj"
+            },
+            "C:\\Users\\Iggy.Glassman\\source\\repos\\HashMap\\UnionFind\\UnionFind.csproj": {
+              "projectPath": "C:\\Users\\Iggy.Glassman\\source\\repos\\HashMap\\UnionFind\\UnionFind.csproj"
             }
           }
         }

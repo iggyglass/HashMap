@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HashMap\HashMap.csproj" />
+    <ProjectReference Include="..\UnionFind\UnionFind.csproj" />
   </ItemGroup>
 
 </Project>

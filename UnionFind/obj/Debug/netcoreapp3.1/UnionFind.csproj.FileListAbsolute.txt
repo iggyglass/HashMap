@@ -1,0 +1,15 @@
+C:\Users\Iggy.Glassman\source\repos\HashMap\UnionFind\bin\Debug\netcoreapp3.1\UnionFind.exe
+C:\Users\Iggy.Glassman\source\repos\HashMap\UnionFind\bin\Debug\netcoreapp3.1\UnionFind.deps.json
+C:\Users\Iggy.Glassman\source\repos\HashMap\UnionFind\bin\Debug\netcoreapp3.1\UnionFind.runtimeconfig.json
+C:\Users\Iggy.Glassman\source\repos\HashMap\UnionFind\bin\Debug\netcoreapp3.1\UnionFind.runtimeconfig.dev.json
+C:\Users\Iggy.Glassman\source\repos\HashMap\UnionFind\bin\Debug\netcoreapp3.1\UnionFind.dll
+C:\Users\Iggy.Glassman\source\repos\HashMap\UnionFind\bin\Debug\netcoreapp3.1\UnionFind.pdb
+C:\Users\Iggy.Glassman\source\repos\HashMap\UnionFind\obj\Debug\netcoreapp3.1\UnionFind.csprojAssemblyReference.cache
+C:\Users\Iggy.Glassman\source\repos\HashMap\UnionFind\obj\Debug\netcoreapp3.1\UnionFind.AssemblyInfoInputs.cache
+C:\Users\Iggy.Glassman\source\repos\HashMap\UnionFind\obj\Debug\netcoreapp3.1\UnionFind.AssemblyInfo.cs
+C:\Users\Iggy.Glassman\source\repos\HashMap\UnionFind\obj\Debug\netcoreapp3.1\UnionFind.dll
+C:\Users\Iggy.Glassman\source\repos\HashMap\UnionFind\obj\Debug\netcoreapp3.1\UnionFind.pdb
+C:\Users\Iggy.Glassman\source\repos\HashMap\UnionFind\bin\Debug\netcoreapp3.1\HashMap.exe
+C:\Users\Iggy.Glassman\source\repos\HashMap\UnionFind\bin\Debug\netcoreapp3.1\HashMap.dll
+C:\Users\Iggy.Glassman\source\repos\HashMap\UnionFind\bin\Debug\netcoreapp3.1\HashMap.pdb
+C:\Users\Iggy.Glassman\source\repos\HashMap\UnionFind\obj\Debug\netcoreapp3.1\UnionFind.csproj.CopyComplete
