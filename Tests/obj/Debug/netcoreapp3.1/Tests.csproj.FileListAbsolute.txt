@@ -95,3 +95,6 @@ C:\Users\Iggy.Glassman\source\repos\HashMap\Tests\obj\Debug\netcoreapp3.1\Tests.
 C:\Users\Iggy.Glassman\source\repos\HashMap\Tests\obj\Debug\netcoreapp3.1\Tests.csproj.CopyComplete
 C:\Users\Iggy.Glassman\source\repos\HashMap\Tests\obj\Debug\netcoreapp3.1\Tests.dll
 C:\Users\Iggy.Glassman\source\repos\HashMap\Tests\obj\Debug\netcoreapp3.1\Tests.pdb
+C:\Users\Iggy.Glassman\source\repos\HashMap\Tests\bin\Debug\netcoreapp3.1\UnionFind.exe
+C:\Users\Iggy.Glassman\source\repos\HashMap\Tests\bin\Debug\netcoreapp3.1\UnionFind.dll
+C:\Users\Iggy.Glassman\source\repos\HashMap\Tests\bin\Debug\netcoreapp3.1\UnionFind.pdb

@@ -200,10 +200,12 @@ namespace Tests
         #region Union Find Tests
 
         // TODO:
-        //   -Figure out correct answers and check them against a, b, c, and d in Union
+        //   -Fix Generic Union Find
+        //   -Write Unit Tests
 
+        // Integer Union Find
         [Fact]
-        public void Union()
+        public void IntUnion()
         {
             IntegerUnionFind uf = new IntegerUnionFind(13);
 
@@ -218,10 +220,54 @@ namespace Tests
             uf.Union(9, 12);
             uf.Union(1, 12);
 
-            bool a = uf.IsConnected(2, 5); // false
-            bool b = uf.IsConnected(7, 12); // true
-            bool c = uf.IsConnected(6, 8); // false
-            bool d = uf.IsConnected(0, 12); // true
+            Assert.False(uf.IsConnected(2, 5));
+            Assert.True(uf.IsConnected(7, 12));
+            Assert.False(uf.IsConnected(6, 8));
+            Assert.True(uf.IsConnected(0, 12));
+        }
+
+        [Fact]
+        public void IntFind()
+        {
+            IntegerUnionFind uf = new IntegerUnionFind(13);
+
+            uf.Union(0, 1);
+            uf.Union(1, 2);
+            uf.Union(4, 5);
+            uf.Union(0, 3);
+            uf.Union(7, 8);
+            uf.Union(8, 9);
+            uf.Union(6, 11);
+            uf.Union(11, 10);
+            uf.Union(9, 12);
+            uf.Union(1, 12);
+
+            Assert.Equal(12, uf.Find(0));
+            Assert.Equal(5, uf.Find(4));
+        }
+
+        // Generic Union Find
+        [Fact]
+        public void GenericUnion()
+        {
+            int[] vals = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+            UnionFind<int> uf = new UnionFind<int>(vals);
+
+            uf.Union(0, 1);
+            uf.Union(1, 2);
+            uf.Union(4, 5);
+            uf.Union(0, 3);
+            uf.Union(7, 8);
+            uf.Union(8, 9);
+            uf.Union(6, 11);
+            uf.Union(11, 10);
+            uf.Union(9, 12);
+            uf.Union(1, 12);
+
+            Assert.False(uf.IsConnected(2, 5));
+            Assert.True(uf.IsConnected(7, 12));
+            Assert.False(uf.IsConnected(6, 8));
+            Assert.True(uf.IsConnected(0, 12));
         }
 
         #endregion

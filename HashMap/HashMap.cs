@@ -36,6 +36,8 @@ namespace HashMap
                 do
                 {
                     if (current.Value.Key.Equals(i)) return current.Value.Value;
+
+                    current = current.Next;
                 }
                 while (current.Next != null);
 

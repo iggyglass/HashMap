@@ -49,7 +49,7 @@
         /// Finds which set node a is in
         /// </summary>
         /// <param name="a">The node to find</param>
-        /// <returns>The set which node a in which node a is a part</returns>
+        /// <returns>The set in which node a is a part</returns>
         public int Find(int a)
         {
             return data[a];

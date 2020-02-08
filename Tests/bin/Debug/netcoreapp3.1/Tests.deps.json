@@ -10,6 +10,7 @@
         "dependencies": {
           "HashMap": "1.0.0",
           "Microsoft.NET.Test.Sdk": "16.2.0",
+          "UnionFind": "1.0.0",
           "coverlet.collector": "1.0.1",
           "xunit": "2.4.0",
           "xunit.runner.visualstudio": "2.4.0"
@@ -1347,6 +1348,14 @@
         "runtime": {
           "HashMap.dll": {}
         }
+      },
+      "UnionFind/1.0.0": {
+        "dependencies": {
+          "HashMap": "1.0.0"
+        },
+        "runtime": {
+          "UnionFind.dll": {}
+        }
       }
     }
   },
@@ -2050,6 +2059,11 @@
       "hashPath": "xunit.runner.visualstudio.2.4.0.nupkg.sha512"
     },
     "HashMap/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UnionFind/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
