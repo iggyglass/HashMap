@@ -1,7 +1,5 @@
-﻿using System;
+﻿using HashMap;
 using System.Collections.Generic;
-using System.Text;
-using HashMap;
 
 namespace UnionFind
 {
@@ -19,12 +17,20 @@ namespace UnionFind
             data = new HashMap<T, int>();
             int count = 0;
 
-            // 11 and 12 never get added to data -- the issue might be with add of the hash map
+            foreach (T item in items)
+            {
+                data.Add(item, count);
+                count++;
+            }
+        }
+
+        public UnionFind(IEnumerable<T> items, int length)
+        {
+            data = new HashMap<T, int>(length);
+            int count = 0;
 
             foreach (T item in items)
             {
-                if (count == 11) ;
-
                 data.Add(item, count);
                 count++;
             }

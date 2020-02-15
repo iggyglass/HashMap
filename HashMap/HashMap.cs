@@ -39,7 +39,7 @@ namespace HashMap
 
                     current = current.Next;
                 }
-                while (current.Next != null);
+                while (current != null);
 
                 throw new Exception($"Key {i} doesn't exist in Hash Map.");
             }
@@ -307,7 +307,7 @@ namespace HashMap
                 while (current != null);
 
 
-                buckets[index].AddLast(new KeyValuePair<TKey, TValue>());
+                buckets[index].AddLast(new KeyValuePair<TKey, TValue>(key, value));
             }
 
             pairs++;
