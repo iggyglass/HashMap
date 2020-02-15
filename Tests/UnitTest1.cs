@@ -199,7 +199,7 @@ namespace Tests
 
         #region Union Find Tests
 
-        // Integer Union Find
+        // Integer Quick Find Union Find
         [Fact]
         public void IntUnion()
         {
@@ -271,6 +271,49 @@ namespace Tests
         {
             int[] vals = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
             UnionFind<int> uf = new UnionFind<int>(vals);
+
+            uf.Union(0, 1);
+            uf.Union(1, 2);
+            uf.Union(4, 5);
+            uf.Union(0, 3);
+            uf.Union(7, 8);
+            uf.Union(8, 9);
+            uf.Union(6, 11);
+            uf.Union(11, 10);
+            uf.Union(9, 12);
+            uf.Union(1, 12);
+
+            Assert.Equal(12, uf.Find(0));
+            Assert.Equal(5, uf.Find(4));
+        }
+
+        // Integer Quick Union
+        [Fact]
+        public void QuickUnion()
+        {
+            QuickUnion uf = new QuickUnion(13);
+
+            uf.Union(0, 1);
+            uf.Union(1, 2);
+            uf.Union(4, 5);
+            uf.Union(0, 3);
+            uf.Union(7, 8);
+            uf.Union(8, 9);
+            uf.Union(6, 11);
+            uf.Union(11, 10);
+            uf.Union(9, 12);
+            uf.Union(1, 12);
+
+            Assert.False(uf.IsConnected(2, 5));
+            Assert.True(uf.IsConnected(7, 12));
+            Assert.False(uf.IsConnected(6, 8));
+            Assert.True(uf.IsConnected(0, 12));
+        }
+
+        [Fact]
+        public void QuickUnionFind()
+        {
+            QuickUnion uf = new QuickUnion(13);
 
             uf.Union(0, 1);
             uf.Union(1, 2);
