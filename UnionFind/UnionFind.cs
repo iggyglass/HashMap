@@ -7,7 +7,7 @@ namespace UnionFind
     public class UnionFind<T>
     {
 
-        // Todo: Make QuickUnion and WeightedQuickUnion using integers and write unit tests
+        // Todo: Make WeightedQuickUnion using integers and write unit tests
 
         private HashMap<T, int> data;
 

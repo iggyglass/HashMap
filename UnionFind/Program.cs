@@ -6,7 +6,7 @@ namespace UnionFind
     {
         static void Main(string[] args)
         {
-            Console.ReadKey();
+            Console.WriteLine();
         }
     }
 }

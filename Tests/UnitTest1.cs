@@ -201,7 +201,7 @@ namespace Tests
 
         // Integer Quick Find Union Find
         [Fact]
-        public void IntUnion()
+        public void IntUnionTest()
         {
             IntegerUnionFind uf = new IntegerUnionFind(13);
 
@@ -223,7 +223,7 @@ namespace Tests
         }
 
         [Fact]
-        public void IntFind()
+        public void IntFindTest()
         {
             IntegerUnionFind uf = new IntegerUnionFind(13);
 
@@ -244,7 +244,7 @@ namespace Tests
 
         // Generic Union Find
         [Fact]
-        public void GenericUnion()
+        public void GenericUnionTest()
         {
             int[] vals = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
             UnionFind<int> uf = new UnionFind<int>(vals);
@@ -267,7 +267,7 @@ namespace Tests
         }
 
         [Fact]
-        public void GenericFind()
+        public void GenericFindTest()
         {
             int[] vals = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
             UnionFind<int> uf = new UnionFind<int>(vals);
@@ -289,7 +289,7 @@ namespace Tests
 
         // Integer Quick Union
         [Fact]
-        public void QuickUnion()
+        public void QuickUnionTest()
         {
             QuickUnion uf = new QuickUnion(13);
 
@@ -311,7 +311,7 @@ namespace Tests
         }
 
         [Fact]
-        public void QuickUnionFind()
+        public void QuickUnionFindTest()
         {
             QuickUnion uf = new QuickUnion(13);
 
@@ -328,6 +328,50 @@ namespace Tests
 
             Assert.Equal(12, uf.Find(0));
             Assert.Equal(5, uf.Find(4));
+        }
+
+        // Weighted Union Find
+        [Fact]
+        public void WeightedUnionTest()
+        {
+            WeightedUnionFind uf = new WeightedUnionFind(13);
+
+            uf.Union(0, 1);
+            uf.Union(1, 2);
+            uf.Union(4, 5);
+            uf.Union(0, 3);
+            uf.Union(7, 8);
+            uf.Union(8, 9);
+            uf.Union(6, 11);
+            uf.Union(11, 10);
+            uf.Union(9, 12);
+            uf.Union(1, 12);
+
+            Assert.False(uf.IsConnected(2, 5));
+            Assert.True(uf.IsConnected(7, 12));
+            Assert.False(uf.IsConnected(6, 8));
+            Assert.True(uf.IsConnected(0, 12));
+        }
+
+        [Fact]
+        public void WeightedUnionFindTest()
+        {
+            WeightedUnionFind uf = new WeightedUnionFind(13);
+
+            uf.Union(0, 1);
+            uf.Union(1, 2);
+            uf.Union(4, 5);
+            uf.Union(0, 3);
+            uf.Union(7, 8);
+            uf.Union(8, 9);
+            uf.Union(6, 11);
+            uf.Union(11, 10);
+            uf.Union(9, 12);
+            uf.Union(1, 12);
+
+            Assert.Equal(0, uf.Find(0));
+            Assert.Equal(4, uf.Find(4));
+            Assert.Equal(4, uf.Find(5));
         }
 
         #endregion
